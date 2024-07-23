@@ -1,0 +1,80 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+
+        int a[]=new int[nums.length];
+        int j=0;
+       
+
+        if(k==nums.length){
+            return;
+        }
+
+        else if(k>nums.length){
+            int c=0;
+        while(c!=k){
+        
+
+
+        int temp=nums[nums.length-1];
+        for(int i=nums.length-1;i>=1;i--){
+             nums[i]=nums[i-1];
+        }       
+        nums[0]=temp;
+        
+        System.out.println(c);
+        c++;
+           
+        }
+        }
+
+        else if(k<nums.length){
+
+        for(int i=nums.length-k;i<nums.length;i++){
+            a[j]=nums[i];
+            j++;
+        }
+
+        int c=k;
+
+        for(int i=0;i<nums.length-k;i++){
+            a[c]=nums[i];
+            c++;
+
+        }
+
+        for(int i=0;i<nums.length;i++){
+            nums[i]=a[i];
+        }
+        }
+
+    }
+}
+
+/**class Solution {
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+        int[] ans = new int[n];
+        
+        for (int i = 0; i < n; ++i) {
+            ans[(i + k) % n] = nums[i];
+        }
+        
+        for (int i = 0; i < n; ++i) {
+            nums[i] = ans[i];
+        }
+    }**/
+
+/** int c=0;
+        while(c!=k){
+        
+
+
+        int temp=nums[nums.length-1];
+        for(int i=nums.length-1;i>=1;i--){
+             nums[i]=nums[i-1];
+        }       
+        nums[0]=temp;
+        
+        System.out.println(c);
+        c++;
+ */

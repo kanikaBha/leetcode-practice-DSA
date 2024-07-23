@@ -1,0 +1,39 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+         int c=0;
+
+    for(int i=0;i<nums.length;i++){
+        if(nums[i]!=0){
+            nums[c]=nums[i];
+            c++;
+        }
+    }
+
+    for(int i=c;i<nums.length;i++){
+        nums[i]=0;
+    }
+        
+    }
+}
+
+
+
+
+//2 pointer from end- does not maintain order- single loop
+   /**  int i=nums.length-1;
+    int j=nums.length-1;
+
+    for(;j>=0;j--){
+        if(nums[j]!=0){
+            continue;
+        }
+        
+        else{
+           int temp=nums[i];
+           nums[i]=nums[j];
+           nums[j]=temp;
+           i--; 
+        }
+    }**/
+
+   
