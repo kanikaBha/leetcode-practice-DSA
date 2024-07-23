@@ -1,0 +1,50 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        Map<Character, Integer> map1= new HashMap();
+        Map<Character, Integer> map2= new HashMap();
+
+        s=s.trim();
+        t=t.trim();
+
+        if(s.length()!=t.length()){
+            return false;
+        }
+
+       
+
+        for(int i=0;i<s.length();i++){
+            if(map1.containsKey(s.charAt(i))){
+                int num=map1.get(s.charAt(i));
+                map1.put(s.charAt(i),num+1);
+            }
+            else{
+                map1.put(s.charAt(i),1);
+            }
+
+        }
+        for(int i=0;i<t.length();i++){
+            if(map2.containsKey(t.charAt(i))){
+                int num=map2.get(t.charAt(i));
+                map2.put(t.charAt(i),num+1);
+            }
+            else{
+                map2.put(t.charAt(i),1);
+            }
+        }
+
+        for(int i=0;i<s.length();i++){
+            if(!map1.get(s.charAt(i)).equals(map2.get(s.charAt(i)))){
+                return false;
+            }
+        }
+        return true;
+
+
+
+
+
+
+
+        
+    }
+}

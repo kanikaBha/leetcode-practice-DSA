@@ -1,0 +1,25 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+         int i;
+        boolean found=false;
+        for(i=0;i<nums.length;i++){
+            if(target==nums[i]){
+                found=true;
+                return i;
+            }
+        }
+        if(found==false){
+        for(i=0;i<nums.length;i++){
+            if(nums[i]<target){
+                continue;
+            }
+            else{
+                return i;
+            }
+
+        }
+        
+    }
+    return i;
+    }
+}
