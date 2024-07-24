@@ -1,0 +1,99 @@
+class Solution {
+    public int reverse(int x) {
+       
+       String val=Integer.toString(x);
+       String num="";
+       String min="";
+       boolean neg=false;
+
+       for(int i=0;i<val.length();i++){
+        if(val.charAt(i)=='-'){
+            min="-";
+            neg=true;
+            continue;
+        }
+        else{
+            num=val.charAt(i)+num;
+        }
+        }
+
+        if(neg==true){
+            num=min+num;
+        }
+
+       
+
+        try{
+
+        return Integer.parseInt(num);
+        }
+        catch(Exception e){
+            return 0;
+        }
+        
+       }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+       
+       
+       
+   
+       /**  String num=Integer.toString(x);
+        String val="";
+        int Val=0;
+        double len=num.length(); 
+        int k;
+
+        for (double i=0;i< num.length();i++){
+            char c=num.charAt((int)i);  
+
+            if(c!='-'){
+                Val+=(int)Math.pow(Character.getNumericValue(c),i%(len-1));  
+            } 
+            else{
+                val="-";
+                i=-1;  
+                len-=1;  
+                continue;
+            }
+        }
+
+        val=val+Integer.toString(Val);
+        try{
+            return Integer.parseInt(val);
+        } 
+        catch(Exception e) {
+            return 0;  
+        }
+    }
+}
+
+*/
+
+
+       
+
+        
+    
+//123
+
+
+
+//210
+//012**/
+
