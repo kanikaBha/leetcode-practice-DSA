@@ -1,0 +1,41 @@
+class Solution {
+
+    public boolean checkVowel(char ch){
+        if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' ||
+        ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U'){
+            return true;
+        }
+
+        return false;
+    }
+
+    public String reverseVowels(String s) {
+        
+         char [] c=s.toCharArray();
+         int i,j;
+        for(i=0,j=c.length-1;i<j;){
+           if(!checkVowel(c[i])){
+            i++;
+           }
+           else if(!checkVowel(c[j])){
+            j--;
+           }
+           else if(checkVowel(c[i]) && checkVowel(c[j])){
+            char temp=c[j];
+            c[j]=c[i];
+            c[i]=temp;
+            i++;
+            j--;
+           }
+        }
+
+        //for(int a=0;a<c.length;a++){
+           // System.out.println(c[a]);
+
+        //}
+
+
+
+        return String.valueOf(c);
+    }
+}

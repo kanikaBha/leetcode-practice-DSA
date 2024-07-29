@@ -1,0 +1,63 @@
+class Solution {
+    public int compress(char[] chars) {
+
+        char ch=chars[0];
+        int c=0;
+        String s="";
+        int i;
+
+        if(chars.length==1){
+            return 1;
+        }
+
+
+        for(i=0;i<chars.length;i++){
+
+            
+            if(ch!=chars[i]){
+                if(c==1){
+                    s=s+Character.toString(chars[i-1]);
+                    ch=chars[i];
+                }
+                else{
+                s=s+Character.toString(chars[i-1])+Integer.toString(c);
+
+
+                ch=chars[i];
+
+                c=1;
+            }
+            }
+            else{
+                c++;
+            }
+            
+            System.out.println(s);
+
+
+        }
+
+        if(i==chars.length){
+             if(c==1){
+                    s=s+Character.toString(chars[i-1]);
+                }
+             else{
+
+            s=s+Character.toString(chars[i-1])+Integer.toString(c);
+            
+        }
+        }
+        System.out.println(s);
+        //chars=[];
+
+        for(int a=0;a<s.length();a++){
+            chars[a]=s.charAt(a);
+        }
+    
+    return s.length();
+}
+}
+
+//"a","a","b","c","c","c"
+                        
+
